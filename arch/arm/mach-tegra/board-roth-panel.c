@@ -776,10 +776,10 @@ static int roth_disp1_check_fb(struct device *dev, struct fb_info *info)
 }
 
 static struct platform_pwm_backlight_data roth_disp1_bl_data = {
-	.pwm_id		= 1,
+	.pwm_id		= 0,
 	.max_brightness	= 254,
 	.dft_brightness	= 128,
-	.pwm_period_ns	= 100000,
+	.pwm_period_ns	= 10000,
 	.pwm_gpio	= DSI_PANEL_BL_PWM,
 	.notify		= roth_disp1_bl_notify,
 	/* Only toggle backlight on fb blank notifications for disp1 */
@@ -846,7 +846,7 @@ static struct tegra_dc_sd_settings roth_sd_settings = {
 
 static struct platform_device __maybe_unused
 			*roth_bl_device[] __initdata = {
-	&tegra_pwfm1_device,
+	&tegra_pwfm0_device,
 	&roth_disp1_bl_device,
 };
 
