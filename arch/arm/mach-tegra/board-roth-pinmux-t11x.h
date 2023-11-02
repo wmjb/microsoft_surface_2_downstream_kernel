@@ -114,7 +114,7 @@ static __initdata struct tegra_pingroup_config roth_pinmux_common[] = {
 	DEFAULT_PINMUX(GMI_AD5,            RSVD1,       NORMAL, NORMAL,   INPUT),
 	DEFAULT_PINMUX(GMI_AD6,            RSVD1,       NORMAL, NORMAL,   INPUT),
 	DEFAULT_PINMUX(GMI_AD7,            RSVD1,       NORMAL, NORMAL,   INPUT),
-	DEFAULT_PINMUX(GMI_AD8,            PWM0,        NORMAL, NORMAL,   OUTPUT),
+        DEFAULT_PINMUX(GMI_AD8,            PWM0,       PULL_UP, NORMAL,   OUTPUT),
 	DEFAULT_PINMUX(GMI_AD9,            GMI,         PULL_DOWN,   TRISTATE, OUTPUT),
 	DEFAULT_PINMUX(GMI_AD10,           GMI,         PULL_DOWN,   TRISTATE, OUTPUT),
 	DEFAULT_PINMUX(GMI_AD11,           GMI,         PULL_DOWN,   TRISTATE, OUTPUT),
@@ -431,11 +431,14 @@ static __initdata struct tegra_pingroup_config roth_pinmux_common[] = {
 	//Fan PWM//
 	DEFAULT_PINMUX(GPIO_PU3,   PWM0,        NORMAL,   NORMAL, OUTPUT),
 */
+
+//        GPIO_PINMUX(GMI_AD8, NORMAL, NORMAL, OUTPUT, DISABLE),
 };
 
 static __initdata struct tegra_pingroup_config unused_pins_lowpower[] = {
 	//DEFAULT_PINMUX(CLK1_REQ,      RSVD3,       PULL_DOWN, TRISTATE, OUTPUT),
 	//DEFAULT_PINMUX(USB_VBUS_EN1,  RSVD3,       PULL_DOWN, TRISTATE, OUTPUT),
+
 };
 
 static struct gpio_init_pin_info init_gpio_mode_roth_common[] = {
@@ -452,7 +455,9 @@ static struct gpio_init_pin_info init_gpio_mode_roth_common[] = {
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PP2, false, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PP0, false, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PP3, false, 0),
-	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PV0, true, 0),
+*/
+//	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PV0, true, 0),
+/*
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PV1, true, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PBB3, false, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PBB5, false, 0),
@@ -469,8 +474,9 @@ static struct gpio_init_pin_info init_gpio_mode_roth_common[] = {
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PG2, true, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PG3, true, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PG4, false, 0),
-	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PH0, false, 0),
-
+*/
+	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PH0, true, 0),
+/*
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PK3, false, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PK4, false, 0),
 	GPIO_INIT_PIN_MODE(TEGRA_GPIO_PK2, true, 0),
